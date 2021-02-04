@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        		<title>Sports Leagues</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+	</head>
+
+    <body>
+
+        <div class="container">
+            <div class="row mb-3">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ORM I
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/ligas/1">Ligas de béisbol</a></li>
+                                        <li><a class="dropdown-item" href="/ligas/2">Ligas de mujeres</a></li>
+                                        <li><a class="dropdown-item" href="/ligas/3">Ligas donde el deporte es cualquier tipo de hockey</a></li>
+                                        <li><a class="dropdown-item" href="/ligas/4">Ligas donde el deporte es algo más que fútbol</a></li>
+                                        <li><a class="dropdown-item" href="/ligas/5">Ligas que se llaman "conferencias"</a></li>
+                                        <li><a class="dropdown-item" href="/ligas/6">Ligas de la región atlántica</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/teams/1">Equipos con sede en Dallas</a></li>
+                                        <li><a class="dropdown-item" href="/teams/2">Equipos nombraron los Raptors</a></li>
+                                        <li><a class="dropdown-item" href="/teams/3">Equipos cuya ubicación incluye "Ciudad"</a></li>
+                                        <li><a class="dropdown-item" href="/teams/4">Equipos cuyos nombres comienzan con "T"</a></li>
+                                        <li><a class="dropdown-item" href="/teams/5">Equipos ordenados alfabéticamente por ubicación</a></li>
+                                        <li><a class="dropdown-item" href="/teams/6">Equipos ordenados por nombre de equipo en orden alfabético inverso</a>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/player/1">Jugadores con apellido "Cooper"</a>
+                                        <li><a class="dropdown-item" href="/player/2">Jugadores con nombre "Joshua"</a>
+                                        <li><a class="dropdown-item" href="/player/3">Jugadores con el apellido "Cooper" que no se llamen "Joshua"</a>
+                                        <li><a class="dropdown-item" href="/player/4">Jugadores con nombre "Alexander" O "Wyatt"</a>
+                                    </ul>
+                                </li>
+
+                                                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ORM II
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/orm2/teams/1">Equipos en la Atlantic Soccer Conferencel</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/2">jugadores (actuales) en los Boston Penguins</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/3">jugadores (actuales) en la International Collegiate Baseball Conference</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/4"> jugadores (actuales) en la Conferencia Americana de Fútbol Amateur con el apellido "López"</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/5">jugadores de fútbol</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/6">equipos con un jugador (actual) llamado "Sophia"</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/7">ligas con un jugador (actual) llamado "Sophia"</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/8">todos con el apellido "Flores" que NO (actualmente) juegan para los Washington Roughriders</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/9">todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/10">Jugadores, pasados y presentes, con los gatos tigre de Manitoba</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/11"> jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings</a></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/12">cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts</a>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/orm2/teams/13">todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur</a>
+                                        <li><a class="dropdown-item" href="/orm2/teams/14">todos los equipos que han tenido 12 o más jugadores, pasados y presentes.</a>
+                                        <li><a class="dropdown-item" href="/orm2/teams/15"> todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado</a>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                </li>
+
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+                <div class="row justify-content-start">
+                    <div class="main col-7 p-3 mx-auto justify-content-center">
+
+                        {% block respuesta %}
+                        <p>Aca va la respuesta</p>
+                        {% endblock %}
+
+                    </div>
+                    <div class="card col-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">SPORT ORM</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">League/Teams/Player</h6>
+                            <p class="card-text">
+                                <h1>Leagues</h1>
+                                <ol>
+                                    {% for league in leagues %}
+                                        <li>{{league.name}}</li>
+                                    {% empty %}
+                                        <p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+                                    {% endfor %}
+                                </ol><hr>
+                                <h1>Teams</h1>
+                                <ol>
+                                    {% for team in teams %}
+                                        <li>{{team.location}} {{team.team_name}}</li>
+                                    {% empty %}
+                                        <p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+                                    {% endfor %}
+                                </ol><hr>
+                                <h1>Players</h1>
+                                <ol>
+                                    {% for player in players %}
+                                        <li>{{player.first_name}} {{player.last_name}}</li>
+                                    {% empty %}
+                                        <p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+                                    {% endfor %}
+                                </ol>
+                            </p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

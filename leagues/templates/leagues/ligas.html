@@ -1,0 +1,45 @@
+{% extends "leagues/index.html" %}
+
+{% block respuesta %}
+
+    {% if request.session.op == '1'%}
+        <h1>1.- Todas las Ligas de Baseball</h1><hr>
+    {% elif request.session.op == '2'%}
+        <h1>2.- Todas las Ligas de Mujeres</h1><hr>
+    {% elif request.session.op == '3'%}
+        <h1>3.- Ligas de Hockey</h1><hr>
+    {% elif request.session.op == '4'%}
+         <h1>4.- Ligas distintas a Futboll</h1><hr>
+    {% elif request.session.op == '5'%}
+         <h1>5.- Ligas llamadas Conferencias</h1><hr>
+    {% elif request.session.op == '6'%}
+         <h1>6.- Ligas de la Región Atlantica</h1><hr>
+    {% endif %}
+
+<div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Liga</th>
+                  <th scope="col">Deporte</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for liga in ligas %}
+                <tr>
+                    <td scope="row">{{ liga.id }}</td>
+                    <td>{{ liga.name }}</td>
+                    <td>{{ liga.sport }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
+

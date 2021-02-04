@@ -1,0 +1,44 @@
+{% extends "leagues/index.html" %}
+
+{% block respuesta %}
+
+    {% if request.session.op == '1'%}
+        <h1>1.- Equipos con sede en Dallas</h1><hr>
+    {% elif request.session.op == '2'%}
+        <h1>2.- Equipos llamados 'Raptors'</h1><hr>
+    {% elif request.session.op == '3'%}
+        <h1>3.- Equipos - Ubicación incluye 'City'</h1><hr>
+    {% elif request.session.op == '4'%}
+         <h1>4.- Equipos que comienzen con 'T'</h1><hr>
+    {% elif request.session.op == '5'%}
+         <h1>5.- Equipos en orden alfabetico por ubicación</h1><hr>
+    {% elif request.session.op == '6'%}
+         <h1>6.- Equipos - Orden inverso </h1><hr>
+    {% endif %}
+
+<div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Equipo</th>
+                  <th scope="col">Ubicación</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for team in equipos %}
+                <tr>
+                    <td scope="row">{{ team.id }}</td>
+                    <td>{{ team.team_name }}</td>
+                    <td>{{ team.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

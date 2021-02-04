@@ -1,0 +1,42 @@
+{% extends "leagues/index.html" %}
+
+{% block respuesta %}
+    {% if request.session.op == '1'%}
+        <h1>1.- Jugadores de Apellido Cooper</h1><hr>
+    {% elif request.session.op == '2'%}
+        <h1>2.- Jugadores de nombre Joshua</h1><hr>
+    {% elif request.session.op == '3'%}
+        <h1>3.- Jugadores - apellido: Cooper; nombre distinto a Joshua</h1><hr>
+    {% elif request.session.op == '4'%}
+         <h1>4.-Jugadores con nombres: Alexander/Wyatt</h1><hr>
+    {% endif %}
+<div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Equipo Actual</th>
+                    <th scope="col">EQUIPOS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jugador in jugadores %}
+                <tr>
+                    <td scope="row">{{ jugador.id }}</td>
+                    <td>{{ jugador.first_name }} {{ jugador.last_name }}</td>
+                    <td>{{ jugador.curr_team.team_name }}</td>
+                    <td>
+                        {% for equipo in jugador.all_teams.all%}
+                        {{ equipo.team_name }} /
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
